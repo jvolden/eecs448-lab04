@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="myStyle.css" media="all">
+    <meta charset="UTF-8">
+    <title>Best Quiz Ever</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <form action="quiz.php" method="post">
+      <?php
+      # Create array of questions/answers.
+      $qanda = array (
+        #array(question, ans1, ans2, ans3, ans4, correctans);
+        array("How many hours did this lab take?",
+              1, 2, 3, 4, 2),
+        array("How much money do you make?",
+              "$0.00", "$1.00", "$2.00", "More than $2.00", 3),
+        array("How much do you like php?",
+              "Not at all", "Love it!", "Meh?", "Kill it with fire!", 1),
+        array("Isn't this the best quiz ever?",
+              "Yes!", "No", "I don't read the questions.", "Bananas", 4),
+        array("How much wood?", 
+              "Can a woodchuck", "Chuck", "If a woodchuck", "Could chuck", 2)
+        );
+      # Generate RADIO questions and answers.
+        echo '<div class="row">';
+        echo '<div class="card-deck">';
+      for ($i = 0; $i<5; $i++) {
+        echo '<div class="col-7">';
+        echo '<div class="card">';
+        echo '<div class="card-header bg-primary">';
+        echo '<h5>Question '.($i+1).': '.$qanda[$i][0].'</h5>'.PHP_EOL;
+        echo '</div>';
+        echo '<div class="card-body">';
+        for ($j = 0; $j<4; $j++) {
+          echo '<div class="form-check">';
+          echo '<label class="form-check-label">'.PHP_EOL;
+          echo '<input class="form-check-input" type="radio" 
+                name="question['.($i).']" value="'.($j+1).'">'.chr(65 + $j).') '.$qanda[$i][($j + 1)].PHP_EOL;
+          echo '</label></div>'.PHP_EOL;
+        }
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+      }
+        echo '</div>';
+        echo '</div>';
+      ?>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+  </body>
+</html>

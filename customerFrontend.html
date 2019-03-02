@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webstore</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="formChecker.js"></script>
+</head>
+<body style="padding: 30px">
+  <div class="container">
+    <form method="post" id="shop" action="customerBackend.php" onsubmit="return(validateForm())">
+      <div class="form-group">
+        <div class="row content">
+          <div class="col-4">
+            <label for="email">Login/Email: </label>
+            <input id="email" type="email" name="email" class="form-control">
+            <label for="pwd">Password: </label>
+            <input id="password" autocomplete="password" type="password" name="password" class="form-control">
+          </div>
+        </div>
+        <div class="row content pt-5">
+          <div class="col">
+            <!-- Start Apple card -->
+            <div class="card">
+              <div class="card-header bg-primary">
+                <h4 class="card-title">Apples: $0.50 each</h4>
+              </div>
+              <div class="card-body">
+                <img src="images/apples.png" 
+                  width="300px" height="200px" 
+                  alt="Apples are good for you!">
+              </div>
+              <div class="card-footer">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="apples">Qty:</span>
+                  </div>
+                  <input name="apples" id="apples" type="text" class="form-control" 
+                    aria-label="Qty:" aria-describedby="apples" value="0">
+                </div>
+              </div>
+            </div>
+            <!-- End Apple card -->
+          </div>
+          <div class="col">
+            <!-- Start Orange card -->
+            <div class="card">
+              <div class="card-header bg-primary">
+                <h4 class="card-title">Oranges: $0.25 each</h4>
+              </div>
+              <div class="card-body">
+                <img src="images/oranges.png" 
+                  width="300px" height="200px" 
+                  alt="Oranges have vitamin C!">
+              </div>
+              <div class="card-footer">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="oranges">Qty:</span>
+                  </div>
+                  <input name="oranges" id="oranges" type="text" class="form-control" 
+                    aria-label="Qty:" aria-describedby="oranges" value="0">
+                </div>
+              </div>
+            </div>
+            <!-- End Orange card -->
+          </div>
+          <div class="col">
+            <!-- Start Banana card -->
+            <div class="card">
+              <div class="card-header bg-primary">
+                <h4 class="card-title">Banana: $0.10 each</h4>
+              </div>
+              <div class="card-body">
+                <img src="images/bananas.png" 
+                  width="300px" height="200px" 
+                  alt="Bananas have potasium!">
+              </div>
+              <div class="card-footer">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="bananas">Qty:</span>
+                  </div>
+                  <input name="bananas" id="bananas" type="text" class="form-control"
+                    aria-label="Qty:" aria-describedby="bananas" value="0">
+                </div>
+              </div>
+            </div>
+            <!-- End Banana card -->
+          </div>
+        </div>
+        <div class="row content pt-5">
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="shipping" value="option1">
+              <label class="form-check-label" for="shipping1">Free 7 day</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="shipping" value="option2">
+              <label class="form-check-label" for="shipping2">$50.00 over night</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="shipping" value="option3">
+              <label class="form-check-label" for="shipping3">$5.00 three day</label>
+            </div>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

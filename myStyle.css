@@ -1,0 +1,28 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+th, td {
+  text-align: center;
+  position: relative;
+  border: 1px solid black;
+}
+
+tr:hover {
+  background-color: #999966;
+}
+
+td:hover::after,
+th:hover::after {
+  content: "";
+  position: absolute;
+  background-color: #999966;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+}
